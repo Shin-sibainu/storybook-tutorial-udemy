@@ -28,6 +28,7 @@ const Mockstore = ({ taskboxState, children }) => (
           name: "taskbox",
           initialState: taskboxState,
           reducers: {
+            //特定のタスクの状態を新しい状態に更新する操作
             updateTaskState: (state, action) => {
               const { id, newTaskState } = action.payload;
               const task = state.tasks.findIndex((task) => task.id === id);
