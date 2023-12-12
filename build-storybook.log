@@ -1,0 +1,5 @@
+yarn run v1.22.19
+$ storybook build --output-dir C:\Users\縺倥ｅ縺ｶ\AppData\Local\Temp\chromatic--23724-dQpOPXsrVf2c
+指定されたパスが見つかりません。
+error Command failed with exit code 1.
+info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.
