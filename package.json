@@ -16,6 +16,7 @@
   "dependencies": {
     "@reduxjs/toolkit": "^2.0.1",
     "@storybook/addon-a11y": "^7.6.4",
+    "@storybook/test-runner": "^0.16.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-redux": "^9.0.2"
@@ -26,7 +27,8 @@
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "init-msw": "msw init public/"
+    "init-msw": "msw init public/",
+    "test-storybook": "test-storybook"
   },
   "devDependencies": {
     "@storybook/addon-essentials": "^7.5.2",
