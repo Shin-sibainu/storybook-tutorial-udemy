@@ -16,7 +16,7 @@ jobs:
           fetch-depth: 0
       - run: yarn
 
-      # Check if CHROMATIC_PROJECT_TOKEN is set
+      # Check if CHROMATIC_PROJECT_TOKEN is set.
       - run: |
           if [ -z "${{ secrets.CHROMATIC_PROJECT_TOKEN }}" ]; then
             echo "CHROMATIC_PROJECT_TOKEN is not set"
