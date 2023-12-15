@@ -4,7 +4,7 @@ import {
   createAsyncThunk,
 } from "@reduxjs/toolkit";
 
-const defaultTasks = [
+export const defaultTasks = [
   { id: "1", title: "Something", state: "TASK_INBOX" },
   { id: "2", title: "Something more", state: "TASK_INBOX" },
   { id: "3", title: "Something else", state: "TASK_INBOX" },
@@ -33,7 +33,7 @@ export const fetchTasks = createAsyncThunk("todos/fetchTodos", async () => {
   return result;
 });
 
-const TasksSlice = createSlice({
+export const TasksSlice = createSlice({
   name: "taskbox",
   initialState: TaskBoxData,
   reducers: {

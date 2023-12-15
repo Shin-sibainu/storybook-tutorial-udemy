@@ -1,5 +1,5 @@
 import InboxScreen from "./InboxScreen";
-import store from "../lib/store";
+import store, { defaultTasks } from "../lib/store";
 
 import { Provider } from "react-redux";
 import { rest } from "msw";

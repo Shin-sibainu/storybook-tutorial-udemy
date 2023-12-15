@@ -4,6 +4,7 @@ import * as TaskStories from "./Task.stories";
 
 import { Provider } from "react-redux";
 import { configureStore, createSlice } from "@reduxjs/toolkit";
+import store, { TasksSlice } from "../lib/store";
 
 //later added
 // A super-simple mock of the state of the store
@@ -20,24 +21,38 @@ export const MockedState = {
   error: null,
 };
 
+// const Mockstore = ({ taskboxState, children }) => (
+//   <Provider
+//     store={configureStore({
+//       reducer: {
+//         taskbox: createSlice({
+//           name: "taskbox",
+//           initialState: taskboxState,
+//           reducers: {
+//             //特定のタスクの状態を新しい状態に更新する操作
+//             updateTaskState: (state, action) => {
+//               const { id, newTaskState } = action.payload;
+//               const task = state.tasks.findIndex((task) => task.id === id);
+//               if (task >= 0) {
+//                 state.tasks[task].state = newTaskState;
+//               }
+//             },
+//           },
+//         }).reducer,
+//       },
+//     })}
+//   >
+//     {children}
+//   </Provider>
+// );
 const Mockstore = ({ taskboxState, children }) => (
   <Provider
     store={configureStore({
       reducer: {
-        taskbox: createSlice({
-          name: "taskbox",
-          initialState: taskboxState,
-          reducers: {
-            //特定のタスクの状態を新しい状態に更新する操作
-            updateTaskState: (state, action) => {
-              const { id, newTaskState } = action.payload;
-              const task = state.tasks.findIndex((task) => task.id === id);
-              if (task >= 0) {
-                state.tasks[task].state = newTaskState;
-              }
-            },
-          },
-        }).reducer,
+        taskbox: TasksSlice.reducer,
+      },
+      preloadedState: {
+        taskbox: taskboxState,
       },
     })}
   >
